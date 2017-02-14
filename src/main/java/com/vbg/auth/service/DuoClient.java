@@ -102,14 +102,6 @@ public class DuoClient {
     }
 
     public PingResponse ping() throws Exception {
-//        final HttpHeaders headers = new HttpHeaders();
-//        headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
-//
-//        headers.setDate(System.currentTimeMillis());
-//        final HttpEntity<String> entity = new HttpEntity<>("headers", headers);
-//
-//        final ResponseEntity<PingResponse> resp = restTemplate.exchange(endpoint("/ping"), HttpMethod.GET, entity, PingResponse.class);
-//        return resp.getBody();
         return exchange("/ping", HttpMethod.GET, null, PingResponse.class).getBody();
     }
 
