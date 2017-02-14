@@ -17,7 +17,7 @@ public class DuoClientApplicationTests {
     @Autowired
     DuoClient duoClient;
 	@Test
-	public void contextLoads() throws Exception {
+	public void testDUO() throws Exception {
         System.out.println("/ping => " +duoClient.ping());
         System.out.println("/check => " +duoClient.check());
         {
