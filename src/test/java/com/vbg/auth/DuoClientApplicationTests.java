@@ -34,7 +34,7 @@ public class DuoClientApplicationTests {
         final Map<String, String> authParams = new HashMap<>();
         authParams.put("username", "user1");
         authParams.put("factor", "passcode");
-        authParams.put("passcode", "678044");
+        authParams.put("passcode", "678045");
         assertEquals("OK", duoClient.auth(authParams).getStat());
     }
 }
