@@ -10,24 +10,32 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.HashMap;
 import java.util.Map;
 
+import static org.junit.Assert.assertEquals;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class DuoClientApplicationTests {
 
     @Autowired
     DuoClient duoClient;
-	@Test
-	public void testDUO() throws Exception {
-        System.out.println("/ping => " +duoClient.ping());
-        System.out.println("/check => " +duoClient.check());
-        {
-            final Map<String, String> authParams = new HashMap<>();
-            authParams.put("username", "user1");
-            authParams.put("factor", "auto");
-            authParams.put("factor", "passcode"); //auto
-            authParams.put("passcode", "678044");
-            System.out.println("/auth => " +duoClient.auth(authParams));
-        }
-	}
 
+    @Test
+    public void testPing() throws Exception {
+        assertEquals("OK", duoClient.ping().getStat());
+    }
+
+    @Test
+    public void testCheck() throws Exception {
+        assertEquals("OK", duoClient.check().getStat());
+    }
+
+    @Test
+    public void testAuth() throws Exception {
+        final Map<String, String> authParams = new HashMap<>();
+        authParams.put("username", "user1");
+        authParams.put("factor", "auto");
+        authParams.put("factor", "passcode"); //auto
+        authParams.put("passcode", "678044");
+        assertEquals("OK", duoClient.auth(authParams).getStat());
+    }
 }
