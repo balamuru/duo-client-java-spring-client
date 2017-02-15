@@ -33,8 +33,7 @@ public class DuoClientApplicationTests {
     public void testAuth() throws Exception {
         final Map<String, String> authParams = new HashMap<>();
         authParams.put("username", "user1");
-        authParams.put("factor", "auto");
-        authParams.put("factor", "passcode"); //auto
+        authParams.put("factor", "passcode");
         authParams.put("passcode", "678044");
         assertEquals("OK", duoClient.auth(authParams).getStat());
     }
