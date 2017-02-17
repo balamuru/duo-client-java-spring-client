@@ -5,7 +5,7 @@ This is a sample java [Duo](https://duo.com/) two factor authentication client t
 In this project, I've tried to illustrate the implementation of a few basic endpoints and extract their responses into POJOs (/ping, /check and /auth).
 
 **Configuration**
-Configure your endpoint and keys (available from the Duo admin interface) in the application.properties file.
+Configure your endpoint and keys (available from the Duo admin interface) in the duo-client-java-spring-client/src/main/resources/application.properties file.
 
 **Usage**
 Write your application logic in the DuoClientApplication.java class. 
